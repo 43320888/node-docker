@@ -31,7 +31,7 @@ jobs: # A workflow run is made up of one or more jobs that can run sequentially 
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           # password: ${{ secrets.GHCR_TOKEN }}
       - 
         name: Build and push
