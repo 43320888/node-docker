@@ -2,6 +2,7 @@ name: CI to Docker Hub # This is a basic workflow to help you get started with A
 # Triggers the workflow to only push to Hub if there’s a particular tag
 on: # Controls when the workflow will run
   push: # Triggers the workflow on push event…
+    branches: [ master ]
     tags:
       - "v*.*.*" # …but only if we tag our commits with V.n.n.n
 jobs: # A workflow run is made up of one or more jobs that can run sequentially or in parallel
