@@ -1,10 +1,16 @@
 name: CI to Docker Hub # This is a basic workflow to help you get started with Actions
 # Triggers the workflow to only push to Hub if there’s a particular tag
-on: # Controls when the workflow will run
-  push: # Triggers the workflow on push event…
-    branches: [ master ]
+## on: # Controls when the workflow will run
+##   push: # Triggers the workflow on push event…
+##     tags:
+##       - "v*.*.*" # …but only if we tag our commits with V.n.n.n
+on:
+  push:
     tags:
-      - "v*.*.*" # …but only if we tag our commits with V.n.n.n
+      - "v*.*.*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs: # A workflow run is made up of one or more jobs that can run sequentially or in parallel
   build: # This workflow contains a single job called "build"
     runs-on: ubuntu-latest # The type of runner that the job will run on
